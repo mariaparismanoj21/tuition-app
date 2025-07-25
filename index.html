@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tuition Management App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Tuition Management App</h1>
+
+    <nav>
+      <button onclick="showSection('students')">Student Management</button>
+      <button onclick="showSection('fees')">Fee Management</button>
+      <button onclick="showSection('attendance')">Attendance</button>
+      <button onclick="showSection('timetable')">Timetable</button>
+      <button onclick="showSection('reports')">Reports</button>
+    </nav>
+
+    <section id="students" class="module">
+      <h2>Add Student</h2>
+      <input type="text" id="student-name" placeholder="Student Name" />
+      <button onclick="addStudent()">Add</button>
+      <ul id="student-list"></ul>
+    </section>
+
+    <section id="fees" class="module hidden">
+      <h2>Fee Management</h2>
+      <input type="text" id="fee-student" placeholder="Student Name" />
+      <input type="number" id="fee-amount" placeholder="Amount Paid" />
+      <button onclick="addFee()">Record Fee</button>
+      <ul id="fee-list"></ul>
+    </section>
+
+    <section id="attendance" class="module hidden">
+      <h2>Attendance</h2>
+      <input type="text" id="attendance-student" placeholder="Student Name" />
+      <input type="date" id="attendance-date" />
+      <button onclick="markAttendance()">Mark Present</button>
+      <ul id="attendance-list"></ul>
+    </section>
+
+    <section id="timetable" class="module hidden">
+      <h2>Timetable</h2>
+      <textarea id="timetable-input" placeholder="Enter timetable details..."></textarea>
+      <button onclick="saveTimetable()">Save</button>
+      <div id="timetable-display"></div>
+    </section>
+
+    <section id="reports" class="module hidden">
+      <h2>Reports</h2>
+      <button onclick="generateReport()">Generate Summary</button>
+      <div id="report-output"></div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
